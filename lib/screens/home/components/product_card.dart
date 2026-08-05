@@ -34,12 +34,10 @@ class ProductCard extends StatelessWidget {
               decoration: BoxDecoration(
                 color: bgColor,
                 borderRadius: const BorderRadius.all(
-                    Radius.circular(defaultBorderRadius)),
+                  Radius.circular(defaultBorderRadius),
+                ),
               ),
-              child: Image.asset(
-                image,
-                height: 132,
-              ),
+              child: Image.asset(image, height: 132),
             ),
             const SizedBox(height: defaultPadding / 2),
             Row(
@@ -53,10 +51,10 @@ class ProductCard extends StatelessWidget {
                 const SizedBox(width: defaultPadding / 4),
                 Text(
                   "\$" + price.toString(),
-                  style: Theme.of(context).textTheme.subtitle2,
+                  style: Theme.of(context).textTheme.titleSmall,
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
