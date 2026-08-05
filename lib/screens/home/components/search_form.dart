@@ -19,6 +19,12 @@ class SearchForm extends StatelessWidget {
     return Form(
       child: TextFormField(
         onSaved: (value) {},
+        validator: (value) {
+          if (value != null && value.contains(RegExp(r'[<>{}]'))) {
+            return 'Invalid characters detected';
+          }
+          return null;
+        },
         decoration: InputDecoration(
           filled: true,
           fillColor: Colors.white,
@@ -39,7 +45,7 @@ class SearchForm extends StatelessWidget {
               height: 48,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: primaryColor,
+                  backgroundColor: primaryColor,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
