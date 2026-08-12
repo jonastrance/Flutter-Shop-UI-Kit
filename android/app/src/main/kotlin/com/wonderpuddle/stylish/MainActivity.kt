@@ -1,4 +1,4 @@
-package com.example.stylish
+package com.wonderpuddle.stylish
 
 import io.flutter.embedding.android.FlutterActivity
 
