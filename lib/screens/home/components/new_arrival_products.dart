@@ -22,29 +22,28 @@ class NewArrivalProducts extends StatelessWidget {
             pressSeeAll: () {},
           ),
         ),
-        SingleChildScrollView(
-          physics: const BouncingScrollPhysics(
-              parent: AlwaysScrollableScrollPhysics()),
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: List.generate(
-              demo_product.length,
-              (index) => Padding(
-                padding: const EdgeInsets.only(right: defaultPadding),
-                child: ProductCard(
-                  title: demo_product[index].title,
-                  image: demo_product[index].image,
-                  price: demo_product[index].price,
-                  bgColor: demo_product[index].bgColor,
-                  press: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              DetailsScreen(product: demo_product[index]),
-                        ));
-                  },
-                ),
+        SizedBox(
+          height: 165,
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
+            scrollDirection: Axis.horizontal,
+            itemCount: demo_product.length,
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.only(right: defaultPadding),
+              child: ProductCard(
+                title: demo_product[index].title,
+                image: demo_product[index].image,
+                price: demo_product[index].price,
+                bgColor: demo_product[index].bgColor,
+                press: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsScreen(product: demo_product[index]),
+                      ));
+                },
               ),
             ),
           ),
