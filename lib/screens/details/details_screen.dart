@@ -18,7 +18,9 @@ class DetailsScreen extends StatelessWidget {
         leading: const BackButton(color: Colors.black),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              debugPrint('Favorite pressed');
+            },
             icon: CircleAvatar(
               backgroundColor: Colors.white,
               child: SvgPicture.asset(
@@ -99,7 +101,9 @@ class DetailsScreen extends StatelessWidget {
                       width: 200,
                       height: 48,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          debugPrint('Add to Cart pressed');
+                        },
                         style: ElevatedButton.styleFrom(
                             primary: primaryColor,
                             shape: const StadiumBorder()),
