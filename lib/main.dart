@@ -17,14 +17,14 @@ class MyApp extends StatelessWidget {
       title: 'The Flutter Way',
       theme: ThemeData(
         scaffoldBackgroundColor: bgColor,
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
         fontFamily: "Gordita",
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
         textTheme: const TextTheme(
-          bodyText2: TextStyle(color: Colors.black54),
+          bodyMedium: TextStyle(color: Colors.black54),
         ),
       ),
       home: const HomeScreen(),
