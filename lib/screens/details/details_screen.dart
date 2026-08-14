@@ -77,8 +77,8 @@ class DetailsScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                   const SizedBox(height: defaultPadding / 2),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       ColorDot(
                         color: Color(0xFFBEE8EA),
                         isActive: false,
