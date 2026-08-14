@@ -21,24 +21,22 @@ class PopularProducts extends StatelessWidget {
             pressSeeAll: () {},
           ),
         ),
-        SingleChildScrollView(
-          physics: const BouncingScrollPhysics(
-              parent: AlwaysScrollableScrollPhysics()),
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: List.generate(
-              demo_product.length,
-              (index) => Padding(
-                padding: const EdgeInsets.only(right: defaultPadding),
-                child: ProductCard(
-                  title: demo_product[index].title,
-                  image: demo_product[index].image,
-                  price: demo_product[index].price,
-                  bgColor: demo_product[index].bgColor,
-                  press: () {},
-                ),
-              ),
+        SizedBox(
+          height: 256,
+          child: ListView.separated(
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
+            scrollDirection: Axis.horizontal,
+            itemCount: demo_product.length,
+            itemBuilder: (context, index) => ProductCard(
+              title: demo_product[index].title,
+              image: demo_product[index].image,
+              price: demo_product[index].price,
+              bgColor: demo_product[index].bgColor,
+              press: () {},
             ),
+            separatorBuilder: (context, index) =>
+                const SizedBox(width: defaultPadding),
           ),
         )
       ],
