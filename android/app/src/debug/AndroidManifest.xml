@@ -1,3 +1,6 @@
+<!-- Security Note: The android XML namespace (http://schemas.android.com/apk/res/android)
+     is a hardcoded identifier used by AAPT/AAPT2, not a network request. Changing this to HTTPS
+     breaks the Android build. This is a known false positive for HTTP schema vulnerabilities. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wonderpuddle.stylish">
     <!-- Flutter needs it to communicate with the running application
